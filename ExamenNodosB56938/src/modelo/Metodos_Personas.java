@@ -234,9 +234,7 @@ public class Metodos_Personas {
     }
     public int getCandidadDePersonas()
     {
-
-        aux=primero;
-        
+        aux=primero;        
         while(aux!=null)
         {
             contador++;
@@ -268,4 +266,91 @@ public class Metodos_Personas {
         
         return informacion;        
     }
+    
+    
+    public void ordenarDeMayorAMenor()
+    {
+        aux=primero;
+        String tem[]= new String[6];
+        for(int contador=0;contador<getCandidadDePersonas();contador++)
+        {
+            aux=primero;
+            while(aux.getSiguiente()!=null)
+            {
+                if(aux.getEdad()<aux.getSiguiente().getEdad())
+                {
+                    
+                    tem[0]=aux.getCodigo();
+                    tem[1]=aux.getCedula();
+                    tem[2]=aux.getNombre();
+                    tem[3]=""+aux.getEdad();
+                    tem[4]=aux.getFecha();
+                    tem[5]=aux.getPrioridad();
+                   
+                    
+                    aux.setCodigo(aux.getSiguiente().getCodigo());
+                    aux.setCedula(aux.getSiguiente().getCedula());
+                    aux.setNombre(aux.getSiguiente().getNombre());
+                    aux.setEdad(aux.getSiguiente().getEdad());
+                    aux.setFecha(aux.getSiguiente().getFecha());
+                    aux.setPrioridad(aux.getSiguiente().getPrioridad());
+                    
+                    aux.getSiguiente().setCodigo(tem[0]);
+                    aux.getSiguiente().setCedula(tem[1]);
+                    aux.getSiguiente().setNombre(tem[2]);
+                    aux.getSiguiente().setEdad(Integer.parseInt(tem[3]));
+                    aux.getSiguiente().setFecha(tem[4]);
+                    aux.getSiguiente().setPrioridad(tem[5]);
+                    
+                                     
+                }
+                aux=aux.getSiguiente();
+            }
+                   
+        }
+    }
+    
+     public void ordenarDeMenorAMayor()
+    {
+        aux=primero;
+        String tem[]= new String[6];
+        for(int contador=0;contador<getCandidadDePersonas();contador++)
+        {
+            aux=primero;
+            while(aux.getSiguiente()!=null)
+            {
+                if(aux.getEdad()>aux.getSiguiente().getEdad())
+                {
+                    
+                    tem[0]=aux.getCodigo();
+                    tem[1]=aux.getCedula();
+                    tem[2]=aux.getNombre();
+                    tem[3]=""+aux.getEdad();
+                    tem[4]=aux.getFecha();
+                    tem[5]=aux.getPrioridad();
+                   
+                    
+                    aux.setCodigo(aux.getSiguiente().getCodigo());
+                    aux.setCedula(aux.getSiguiente().getCedula());
+                    aux.setNombre(aux.getSiguiente().getNombre());
+                    aux.setEdad(aux.getSiguiente().getEdad());
+                    aux.setFecha(aux.getSiguiente().getFecha());
+                    aux.setPrioridad(aux.getSiguiente().getPrioridad());
+                    
+                    aux.getSiguiente().setCodigo(tem[0]);
+                    aux.getSiguiente().setCedula(tem[1]);
+                    aux.getSiguiente().setNombre(tem[2]);
+                    aux.getSiguiente().setEdad(Integer.parseInt(tem[3]));
+                    aux.getSiguiente().setFecha(tem[4]);
+                    aux.getSiguiente().setPrioridad(tem[5]);
+                    
+                                     
+                }
+                aux=aux.getSiguiente();
+            }
+                   
+        }
+    }
+    
+    
 }

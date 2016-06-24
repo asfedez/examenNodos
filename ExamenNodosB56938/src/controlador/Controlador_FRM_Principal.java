@@ -87,6 +87,16 @@ public class Controlador_FRM_Principal implements ActionListener{
         {
             fRM_Principal.mostrarInformacion(metodos_Personas.reportes());
         }
+        if(e.getActionCommand().equals("Mayor"))
+        {
+            metodos_Personas.ordenarDeMayorAMenor();        
+            fRM_Principal.mostrarInformacion(metodos_Personas.mostrarInformacion());
+        }
+        if(e.getActionCommand().equals("Menor"))
+        {
+            metodos_Personas.ordenarDeMenorAMayor();
+            fRM_Principal.mostrarInformacion(metodos_Personas.mostrarInformacion());
+        }
     }
     
     public String getPrioridad()
